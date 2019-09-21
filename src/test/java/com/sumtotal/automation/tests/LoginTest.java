@@ -26,6 +26,7 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void test(){
+        System.out.println("testing merge fuctionality");
 
     }
 }
