@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 
 import java.util.ResourceBundle;
 
+//Checking functionality of MErge
 public class LoginTest extends BaseTest {
 
     ResourceBundle bundle = ResourceBundle.getBundle("envCredentials");
@@ -19,12 +20,13 @@ public class LoginTest extends BaseTest {
     public void login(){
 
 
-
+// Checking Merge functionality
     }
 
 
     @Test
     public void test(){
+        System.out.println("testing merge fuctionality");
 
     }
 }
