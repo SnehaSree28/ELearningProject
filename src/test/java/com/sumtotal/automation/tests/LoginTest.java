@@ -19,7 +19,7 @@ public class LoginTest extends BaseTest {
     public void login(){
 
 
-
+// Checking Merge functionality
     }
 
 
