@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CO_TestCases">
+
+    <test name="Co_Test">
+        <classes>
+          <!--  <class name="test.java.com.sumtotal.automation.tests.SearchTest"/>
+            <class name="test.java.com.sumtotal.automation.tests.ReportingTest"/>-->
+            <class name="test.java.com.sumtotal.automation.tests.ODPMPTest"></class>
+        </classes>
+    </test>
+</suite>
