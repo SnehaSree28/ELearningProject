@@ -22,7 +22,7 @@ public class FileUploadTest {
 
     @BeforeMethod
     public void admin(){
-        driver = BaseSetup.browserSetup(driver);
+
         if(bundle.getString("userName").equals("psadmin")){
             LoginPage loginPage = new LoginPage(driver);
             dashboardPage =  loginPage.login(bundle.getString("userName"),bundle.getString("password"));
