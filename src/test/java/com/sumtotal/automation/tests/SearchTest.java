@@ -33,6 +33,7 @@ public class SearchTest extends BaseTest {
         searchPage = new SearchPage(driver);
         boolean search=searchPage.searchReport();
         System.out.println("Git Test");
+        System.out.printn("Hello);
         Assert.assertTrue(search,"searchSite_Key functionality is failed");
 
     }
