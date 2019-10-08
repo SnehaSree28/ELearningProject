@@ -50,7 +50,7 @@
     <profiles>
 
         <profile>
-            <id>PROD</id>
+            <id>ODPMP</id>
             <properties>
                 <env>https://odpmp.sumtotalsystems.com</env>
                 <userNme>sjambula</userNme>
@@ -60,7 +60,7 @@
             </properties>
         </profile>
         <profile>
-            <id>QA</id>
+            <id>DEVLAB</id>
             <properties>
                 <env>https://avanade.sumtotallab.host</env>
                 <userName>psadmin</userName>

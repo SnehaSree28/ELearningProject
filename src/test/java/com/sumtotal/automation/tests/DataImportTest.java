@@ -19,7 +19,7 @@ public class DataImportTest {
     ResourceBundle bundle= ResourceBundle.getBundle("envCredentials");
     @BeforeClass
     public void launchAndLogin() {
-        driver = BaseSetup.browserSetup(driver);
+
         if (bundle.getString("userName").equals("psadmin")) {
             LoginPage loginPage = new LoginPage(driver);
             dashboardPage = loginPage.login(bundle.getString("userName"), bundle.getString("password"));
