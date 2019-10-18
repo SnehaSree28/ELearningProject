@@ -51,9 +51,9 @@ public class ReportPage {
         return wait;
     }
 
-    public DashboardPage navigateToAdminIcon(){
+    public void navigateToAdminIcon(){
         selfHeader.click();
-        return new DashboardPage(driver);
+
     }
 
 
@@ -65,83 +65,50 @@ public class ReportPage {
         advancedReporting.click();
 
     }
-
     public void navigationMenu() throws InterruptedException {
         JavascriptExecutor js = (JavascriptExecutor)driver;
-        waiting();
-        System.out.println(" ....:Trying to switch to frame : ---");
-
+        log.info(" Trying to switch to frame ");
         WebElement frame =driver.findElement(By.id("productPillarFrame"));
-      //  js.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');",frame);
-
+       // js.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');",frame);
         driver.switchTo().frame("productPillarFrame");
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         WebElement folderContent = driver.findElement(By.id("foldersPodContent"));
-        wait.until(ExpectedConditions.visibilityOf(folderContent));
-    //    js.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');",folderContent);
-        System.out.println("Switched to folder content");
-
+        waiting().until(ExpectedConditions.visibilityOf(folderContent));
+        log.info("Switched to folder content");
         WebElement siteKeyExpansion=driver.findElement(By.id("handler2"));
-        wait.until(ExpectedConditions.visibilityOf(siteKeyExpansion));
-
-
-       // js.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');",siteKeyExpansion);
-        Actions actions = new Actions(driver);
-        actions.click(siteKeyExpansion);
-        System.out.println("Switched to siteKey");
-
-      //  siteKeyExpansion.click();
-     //   System.out.println("TestCase Passed");
-
+        waiting().until(ExpectedConditions.visibilityOf(siteKeyExpansion));
+        js.executeScript("arguments[0].click();", siteKeyExpansion);
+        log.info("Clicked on Site_Key of reports");
         WebElement reportsExpansion= driver.findElement(By.id("handler8"));
-        wait.until(ExpectedConditions.visibilityOf(reportsExpansion));
-        actions.click(reportsExpansion);
-       // reportsExpansion.click();
-        System.out.println("reports clicked");
-        Waiting.staticWait(2000);
+        waiting().until(ExpectedConditions.visibilityOf(reportsExpansion));
+        js.executeScript("arguments[0].click();",reportsExpansion);
+        log.info("reports clicked");
         WebElement audience=driver.findElement(By.xpath("//*[text()='Audience']"));
-        wait.until(ExpectedConditions.visibilityOf(audience));
-        actions.click(audience);
-        //audience.click();
-
-
+        waiting().until(ExpectedConditions.visibilityOf(audience));
+        audience.click();
         WebElement audienceAssociationSummary=driver.findElement(By.xpath("//*[text()='Audience User Association Summary']"));
-        wait.until(ExpectedConditions.visibilityOf(audienceAssociationSummary));
+        waiting().until(ExpectedConditions.visibilityOf(audienceAssociationSummary));
         audienceAssociationSummary.click();
-   //     Waiting.staticWait(10000);
-
-
+        Waiting.staticWait(10000);
     }
 
-
-    public boolean navigateAudienceUserAssociationSummary() throws InterruptedException {
-
-        waiting();
-        driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
-        WebElement inputControls=driver.findElement(By.id("inputControls"));
-
-    //    Waiting.staticWait(5000);
-        WebElement audiName=driver.findElement(By.id("pAudNames"));
+    public boolean navigateAudienceUserAssociationSummary()  {
 
 
-      /*  WebElement audienceReport=driver.findElement(By.xpath("//*[text()='ASP Audience']"));
-
-        wait.until(ExpectedConditions.visibilityOf(audienceReport));
-        audienceReport.click();
-        log.info("Clicked on ASP Audience");
-      */  WebElement apply=driver.findElement(By.xpath("//span[text()='Apply']"));
-        wait.until(ExpectedConditions.visibilityOf(apply));
-        apply.click();
+        WebElement apply=driver.findElement(By.xpath("//span[text()='Apply']"));
+        waiting().until(ExpectedConditions.visibilityOf(apply));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(apply).click().build().perform();
+       //apply.click();
         log.info("Clicked on apply");
-
-        WebElement Ok=    driver.findElement(By.xpath("//button[@id='ok']"));
-        wait.until(ExpectedConditions.visibilityOf(Ok));
-        Ok.click();
+        WebElement Ok=driver.findElement(By.xpath("//button[@id='ok']"));
+        waiting().until(ExpectedConditions.visibilityOf(Ok));
+        actions.moveToElement(Ok).click().build().perform();
+        //Ok.click();
         log.info("CLicked on OK");
-
         boolean text = driver.findElement(By.xpath("//span[text()='AUDIENCE USER ASSOCIATION']")).isDisplayed();
         log.info("Text has been displayed");
         return text;
     }
+
 
 }

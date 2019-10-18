@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [CO_TestCases]">
+  <test thread-count="5" name="SearchTest(failed)">
+    <classes>
+      <class name="test.java.com.sumtotal.automation.tests.SearchTest">
+        <methods>
+          <include name="co_search"/>
+          <include name="launchAndLogin"/>
+          <include name="launchDriver"/>
+          <include name="logout"/>
+        </methods>
+      </class> <!-- test.java.com.sumtotal.automation.tests.SearchTest -->
+    </classes>
+  </test> <!-- SearchTest(failed) -->
+  <test thread-count="5" name="BatchProcessTest(failed)">
+    <classes>
+      <class name="test.java.com.sumtotal.automation.tests.BatchProcessTest">
+        <methods>
+          <include name="batchProcess"/>
+          <include name="validateBatchProcess"/>
+          <include name="launchAndLogin"/>
+          <include name="launchDriver"/>
+          <include name="logout"/>
+        </methods>
+      </class> <!-- test.java.com.sumtotal.automation.tests.BatchProcessTest -->
+    </classes>
+  </test> <!-- BatchProcessTest(failed) -->
+</suite> <!-- Failed suite [CO_TestCases] -->

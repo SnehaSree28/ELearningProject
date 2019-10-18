@@ -44,7 +44,8 @@ public class DashboardTest extends BaseTest{
     }
 
     @Test
-    public void test(){
+    public void test()
+    {
         System.out.println("hello");
     }
 }

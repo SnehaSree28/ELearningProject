@@ -27,6 +27,8 @@ public class ActivityCreationTest extends BaseTest{
            odpmpPage.odpmpLogin(bundle.getString("userName"), bundle.getString("password"));
         }
     }
+
+
     @Test
     public void activityCreation() throws InterruptedException {
         activityCreationPage = new ActivityCreationPage(driver);

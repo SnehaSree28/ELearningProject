@@ -72,7 +72,7 @@ public class ActivityCreationPage {
     public void goToNewActivity() throws InterruptedException {
         driver.switchTo().frame("productPillarFrame");
 
-       // waiting().until(ExpectedConditions.visibilityOf(newActivity));
+       // waitForVisibility().until(ExpectedConditions.visibilityOf(newActivity));
         newActivity.click();
         log.info("Navigated to New Activity");
         Actions actions = new Actions(driver);

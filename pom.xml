@@ -25,7 +25,6 @@
                         <suiteXmlFile>testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
-
             </plugin>
             <!-- Compiler plugin configures the java version to be used for compiling
             the code -->
@@ -47,28 +46,31 @@
             </resource>
         </resources>
     </build>
-    <profiles>
 
+    <profiles>
         <profile>
-            <id>PROD</id>
+            <id>ODPMP</id>
             <properties>
                 <env>https://odpmp.sumtotalsystems.com</env>
                 <userNme>sjambula</userNme>
                 <!--<pwd>@Sumtotal900</pwd>-->
                 <pwd>sumtotal#123</pwd>
-                <search>unitywater_stage</search>
+                <search>PPDDEV18-2.stage.sumtotal.host</search>
             </properties>
         </profile>
+
         <profile>
-            <id>QA</id>
+            <id>DEVLAB</id>
             <properties>
-                <env>https://avanade.sumtotallab.host</env>
+                <env>http://patterson.sumtotallab.host</env>
                 <userName>psadmin</userName>
-                <password>L@bTe$t12</password>
+                    <password>L@bTe$t12</password>
             </properties>
         </profile>
 
     </profiles>
+
+
 
     <dependencies>
         <dependency>

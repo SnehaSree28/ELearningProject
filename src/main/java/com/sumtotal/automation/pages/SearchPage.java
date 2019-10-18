@@ -1,5 +1,6 @@
 package main.java.com.sumtotal.automation.pages;
 
+import main.java.com.sumtotal.automation.base.waiting.Waiting;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,9 +11,11 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class SearchPage {
-    public WebDriver driver = null;
+public class SearchPage  {
+    public WebDriver driver;
+
     public WebDriverWait wait;
+
     @FindBy(id = "txtSearch-main")
     public WebElement search;
     @FindBy(id = "search_header")
@@ -26,7 +29,7 @@ public class SearchPage {
         PageFactory.initElements(driver, this);
     }
 
-    public WebDriverWait waiting() {
+    /*public WebDriverWait waitForVisibility() {
         try {
             wait = new WebDriverWait(driver, 30);
 
@@ -37,13 +40,12 @@ public class SearchPage {
         return wait;
 
     }
-
+*/
 
     public boolean searchReport() {
         wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.visibilityOf(searchHeader));
         searchHeader.click();
-        wait.until(ExpectedConditions.visibilityOf(search));
         Actions actions =new Actions(driver);
         actions.sendKeys(search,"*").build().perform();
         WebElement selectElementGetText = driver.findElement(By.xpath("(//*[text()='Select'])[2]"));
@@ -55,6 +57,6 @@ public class SearchPage {
             System.out.println("Search functionality is not completed");
         }
         return isDisplayed;
-    }
+       }
 }
 

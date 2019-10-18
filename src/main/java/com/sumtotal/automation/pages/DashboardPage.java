@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class DashboardPage {
-    WebDriver driver;
+     WebDriver driver;
     @FindBy(id="self_header")
     public WebElement selfHeader;
 
@@ -44,7 +44,14 @@ public class DashboardPage {
     @FindBy(xpath = "//span[text()='Learning Activities']")
     public WebElement learningActivities;
 
+    @FindBy(xpath = "//*[text()='Setup']")
+    public WebElement setUp;
 
+    @FindBy(xpath = "//*[text()='Talent']")
+    public WebElement talent;
+
+    @FindBy(xpath = "//*[text()='System']")
+    public WebElement system;
 
     public DashboardPage(WebDriver driver){
     this.driver=driver;
@@ -87,6 +94,13 @@ public class DashboardPage {
         learning.click();
         learningActivities.click();
         return new ActivityCreationPage(driver);
+   }
+   public BatchProcessPage goToBatchProcess(){
+        adminIcon.click();
+        setUp.click();
+        talent.click();
+        system.click();
+        return new BatchProcessPage(driver);
    }
 
 

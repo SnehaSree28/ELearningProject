@@ -33,7 +33,7 @@ public class CreateUserTest {
         }
     }
     @Test(description = "To create user ")
-    public void creteUserTest(){
+    public void createUserTest(){
         dashboardPage = new DashboardPage(driver);
         createUserPage= new CreateUserPage(driver);
         CreateUserPage createUserPage = dashboardPage.goToCreateUser();
@@ -43,6 +43,5 @@ public class CreateUserTest {
                 "SampleLastNmme"+CommonMethods.getCurrentTimeStamp());
         boolean b = createUserPage.savedSuccessfullyAlert();
         Assert.assertTrue(b,"User succesffuly created");
-
     }
 }

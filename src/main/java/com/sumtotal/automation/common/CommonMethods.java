@@ -33,4 +33,8 @@ public class CommonMethods {
         Select select = new Select(element);
         select.selectByVisibleText(text);
     }
+    public static  void enterData(WebElement element,String data){
+        element.sendKeys(data);
+    }
+
 }
