@@ -28,13 +28,12 @@ public class SearchTest extends BaseTest {
             dashboardPage = loginPage.login(bundle.getString("userName"), bundle.getString("password"));
         }
     }
+
     @Test(description = "To search the reports")
     public void co_search()  {
         searchPage = new SearchPage(driver);
         boolean search=searchPage.searchReport();
         System.out.println("Git Test");
         Assert.assertTrue(search,"searchSite_Key functionality is failed");
-
     }
-
 }
