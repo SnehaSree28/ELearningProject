@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default Suite]">
+  <test thread-count="5" name="ELearningProject(failed)">
+    <classes>
+      <class name="test.java.com.sumtotal.automation.tests.SearchTest">
+        <methods>
+          <include name="co_search"/>
+          <include name="launchAndLogin"/>
+          <include name="launchDriver"/>
+        </methods>
+      </class> <!-- test.java.com.sumtotal.automation.tests.SearchTest -->
+    </classes>
+  </test> <!-- ELearningProject(failed) -->
+</suite> <!-- Failed suite [Default Suite] -->
