@@ -20,6 +20,7 @@ public class CreateUserTest {
     ResourceBundle bundle = ResourceBundle.getBundle("envCredentials");
     DashboardPage dashboardPage;
     CreateUserPage createUserPage;
+
     @BeforeMethod
     public void launchAndLogin() {
         driver = BaseSetup.browserSetup(driver);
